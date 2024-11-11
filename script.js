@@ -1,17 +1,22 @@
 // script.js
 
-document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('login-form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita el envío del formulario
 
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    const errorMessage = document.getElementById('error-message');
+        // Aquí puedes añadir la lógica de validación de usuario y contraseña
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
-    // Validación básica
-    if (username === "admin" && password === "password123") {
-        alert('¡Inicio de sesión exitoso!');
-        errorMessage.textContent = '';
-    } else {
-        errorMessage.textContent = 'Usuario o contraseña incorrectos.';
-    }
+        // Simulación de validación (puedes reemplazar esto con una validación real)
+        if (username === 'admin' && password === 'admin') {
+            // Redirige a la página de inicio
+            window.location.href = 'home.html';
+        } else {
+            // Muestra un mensaje de error
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.textContent = 'Usuario o contraseña incorrectos';
+        }
+    });
 });
