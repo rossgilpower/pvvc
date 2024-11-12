@@ -1,0 +1,71 @@
+/* tray_style.css */
+
+.tray-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.tray-container.list-view .tray {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.tray-container.grid-view .tray {
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.tray {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color: black; /* Asegurarse de que el texto sea negro */
+    text-decoration: none; /* Eliminar subrayado */
+}
+
+.tray:hover {
+    background-color: rgba(240, 240, 240, 0.8); /* Cambiar el color de fondo al pasar el ratón */
+}
+
+.tray h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.tray ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.tray ul li {
+    margin-bottom: 5px;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status.en-mantenimiento {
+    color: red;
+}
+
+.status.disponible {
+    color: green;
+}
+
+.status.en-limpieza {
+    color: #fcb607;
+}
+
+.status.en-uso {
+    color: blue;
+}
+
+.tray-container.list-view .details {
+    display: none;
+}

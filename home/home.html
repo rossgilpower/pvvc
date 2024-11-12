@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <link rel="stylesheet" href="../home/home.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../home/tray_style.css">
+    <link rel="stylesheet" href="../home/modal.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="../home/home.html">Inicio</a>
+            <div class="dropdown">
+                <button class="dropbtn">Charolas</button>
+                <div class="dropdown-content">
+                    <a href="#" id="add-tray">Agregar</a>
+                    <a href="#" id="modify-tray">Modificar</a>
+                    <a href="#" id="consult-tray">Consultar</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="user-info">
+                <img src="../assets/user.png" alt="User">
+                <span>Nombre del Usuario</span>
+            </div>
+            <img src="../assets/logo.png" alt="Logo" class="logo">
+            <a href="../login/login.html">Cerrar Sesión</a>
+        </div>
+    </div>
+
+    <div class="home-container">
+        <h1>Bienvenido a la Página de Inicio</h1>
+        <p>Has iniciado sesión correctamente.</p>
+
+        <div class="nav-bar">
+            <div class="view-buttons">
+                <button id="list-view-btn" onclick="changeClass('list-view')"><img src="../assets/list.png" alt="Lista"></button>
+                <button id="grid-view-btn" onclick="changeClass('grid-view')"><img src="../assets/grid.png" alt="Cuadrícula"></button>
+            </div>
+        </div>
+
+        <h2>Charolas de Herramientas Quirúrgicas</h2>
+        <div class="tray-container list-view">
+            <a href="../tray/tray.html?id=1" class="tray">
+                <h3>Charola 1</h3>
+                <ul class="details">
+                    <li>Bisturí</li>
+                    <li>Tijeras</li>
+                    <li>Pinzas</li>
+                </ul>
+                <p>Estado: <span class="status en-mantenimiento">En mantenimiento</span></p>
+            </a>
+            <a href="../tray/tray.html?id=2" class="tray">
+                <h3>Charola 2</h3>
+                <ul class="details">
+                    <li>Estetoscopio</li>
+                    <li>Termómetro</li>
+                    <li>Esfigmomanómetro</li>
+                </ul>
+                <p>Estado: <span class="status en-limpieza">En limpieza</span></p>
+            </a>
+            <a href="../tray/tray.html?id=3" class="tray">
+                <h3>Charola 3</h3>
+                <ul class="details">
+                    <li>Pinzas</li>
+                    <li>Gasas</li>
+                    <li>Jeringas</li>
+                </ul>
+                <p>Estado: <span class="status disponible">Disponible</span></p>
+            </a>
+            <a href="../tray/tray.html?id=4" class="tray">
+                <h3>Charola 4</h3>
+                <ul class="details">
+                    <li>Guantes</li>
+                    <li>Mascarillas</li>
+                    <li>Desinfectante</li>
+                </ul>
+                <p>Estado: <span class="status en-uso">En uso</span></p>
+            </a>
+            <a href="../tray/tray.html?id=5" class="tray">
+                <h3>Charola 5</h3>
+                <ul class="details">
+                    <li>Tijeras</li>
+                    <li>Mascarillas</li>
+                    <li>Desinfectante</li>
+                </ul>
+                <p>Estado: <span class="status disponible">Disponible</span></p>
+            </a>
+
+            <a href="../tray/tray.html?id=6" class="tray">
+                <h3>Charola 6</h3>
+                <ul class="details">
+                    <li>Tijeras</li>
+                    <li>Bisturí</li>
+                    <li>Lupa</li>
+                </ul>
+                <p>Estado: <span class="status en-uso">En uso</span></p>
+            </a>
+            <!-- Agrega más charolas según sea necesario -->
+        </div>
+    </div>
+
+    <!-- Pop-up Modals -->
+    <div id="popup-form" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="popup-form-content">
+                <!-- El contenido del formulario se llenará dinámicamente -->
+            </form>
+        </div>
+    </div>
+
+   <script>
+    function changeClass(view) {
+        const trayContainer = document.querySelector('.tray-container');
+        if (view === 'list-view') {
+            trayContainer.className = 'tray-container list-view';
+        } else if (view === 'grid-view') {
+            trayContainer.className = 'tray-container grid-view';
+        }
+    }
+   </script>
+
+    <script src="../home/modal.js"></script>
+    <script src="../home/home.js"></script>
+</body>
+</html>
