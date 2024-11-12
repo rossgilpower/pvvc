@@ -95,11 +95,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <input type="text" id="tray-status" name="tray-status" value="${tray.status}" required>
                 </div>
                 <div class="form-group">
-                    <label for="tray-storekeeper">Almacenista Responsable:</label>
+                    <label for="tray-storekeeper">Almacenista:</label>
                     <input type="text" id="tray-storekeeper" name="tray-storekeeper" value="${tray.storekeeper}" required>
                 </div>
                 <div class="form-group">
-                    <label for="tray-instrumentalist">Instrumentista Responsable:</label>
+                    <label for="tray-instrumentalist">Instrumentista:</label>
                     <input type="text" id="tray-instrumentalist" name="tray-instrumentalist" value="${tray.instrumentalist}" required>
                 </div>
                 <div class="form-group">
