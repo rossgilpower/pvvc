@@ -21,7 +21,7 @@
     align-items: center;
 }
 
-.nav-left a, .dropdown .dropbtn {
+.nav-left a, .nav-right a,.dropdown .dropbtn {
     float: left;
     display: block;
     color: #f2f2f2;

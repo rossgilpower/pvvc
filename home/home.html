@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../home/modal.css">
     <link rel="icon" href="../assets/icon.png" type="image/png">
 </head>
+
+<!-- Navbar -->
 <body>
     <header class="navbar">
         <div class="nav-left">
@@ -23,6 +25,10 @@
                     <a href="#" id="consult-tray">Consultar</a>
                 </div>
             </div>
+            <a href="#" onclick="openModal('report')">Reportes</a>
+            <a href="#" onclick="openModal('user')">Usuarios</a>
+            <a href="#" onclick="openModal('ayuda')">Ayuda</a>
+            
         </div>
         <div class="nav-right">
             <div class="user-info">
@@ -33,17 +39,17 @@
         </div>
     </header>
 
+      <!-- Botones para filtro y cambiar la vista de las charolas -->
     <div class="home-container">
-        <h1>Bienvenido a la Página de Inicio</h1>
-        <p>Has iniciado sesión correctamente.</p>
-
         <div class="nav-bar">
             <div class="view-buttons">
+                <button id="filter-btn" onclick="openModal('filter')"><img src="../assets/filter.png" alt="Filtrar"><button>       
                 <button id="list-view-btn" onclick="changeClass('list-view')"><img src="../assets/list.png" alt="Lista"></button>
                 <button id="grid-view-btn" onclick="changeClass('grid-view')"><img src="../assets/grid.png" alt="Cuadrícula"></button>
             </div>
         </div>
 
+        <!-- Contenedor de charolas -->
         <h2>Charolas de Herramientas Quirúrgicas</h2>
         <div class="tray-container list-view">
             <a href="../tray/tray.html?id=1" class="tray">
@@ -115,7 +121,7 @@
         </div>
     </div>
 
-   <script>
+   <script> //Script para el cambio de vista de charola
     function changeClass(view) {
         const trayContainer = document.querySelector('.tray-container');
         if (view === 'list-view') {
@@ -126,7 +132,7 @@
     }
    </script>
 
-    <script>
+    <script> //Script para el dropdown
         function toggleDropdown() {
             const dropdownContent = document.querySelector('.dropdown-content');
             if (dropdownContent.style.display === 'block') {
