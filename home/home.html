@@ -11,11 +11,12 @@
     <link rel="icon" href="../assets/icon.png" type="image/png">
 </head>
 <body>
-    <div class="navbar">
+    <header class="navbar">
         <div class="nav-left">
+            <img src="../assets/logo.png" alt="Logo" class="logo">
             <a href="../home/home.html">Inicio</a>
             <div class="dropdown">
-                <button class="dropbtn">Charolas</button>
+                <button class="dropbtn" onclick="toggleDropdown()">Charolas</button>
                 <div class="dropdown-content">
                     <a href="#" id="add-tray">Agregar</a>
                     <a href="#" id="modify-tray">Modificar</a>
@@ -28,10 +29,9 @@
                 <img src="../assets/user.png" alt="User">
                 <span>Nombre del Usuario</span>
             </div>
-            <img src="../assets/logo.png" alt="Logo" class="logo">
             <a href="../login/login.html">Cerrar Sesión</a>
         </div>
-    </div>
+    </header>
 
     <div class="home-container">
         <h1>Bienvenido a la Página de Inicio</h1>
@@ -125,6 +125,27 @@
         }
     }
    </script>
+
+    <script>
+        function toggleDropdown() {
+            const dropdownContent = document.querySelector('.dropdown-content');
+            if (dropdownContent.style.display === 'block') {
+                dropdownContent.style.display = 'none';
+            } else {
+                dropdownContent.style.display = 'block';
+            }
+        }
+
+        // Cerrar el dropdown si el usuario hace clic fuera de él
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                const dropdownContent = document.querySelector('.dropdown-content');
+                if (dropdownContent.style.display === 'block') {
+                    dropdownContent.style.display = 'none';
+                }
+            }
+        });
+    </script>
 
     <script src="../home/modal.js"></script>
     <script src="../home/home.js"></script>
