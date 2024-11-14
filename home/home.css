@@ -19,21 +19,11 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 800px;
     text-align: center;
+    align-items: center;
     margin-top: 70px; /* Ajustar para la barra de navegación */
-}
-
-
-
-h1 {
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-h2 {
-    margin-top: 30px;
-    font-size: 24px;
 }
 
 .view-buttons {
     float: right;
+    align-items: center;
 }

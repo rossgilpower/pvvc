@@ -13,43 +13,58 @@
 
 <!-- Navbar -->
 <body>
-    <header class="navbar">
-        <div class="nav-left">
-            <img src="../assets/logo.png" alt="Logo" class="logo">
-            <a href="../home/home.html">Inicio</a>
-            <div class="dropdown">
-                <button class="dropbtn" onclick="toggleDropdown()">Charolas</button>
-                <div class="dropdown-content">
-                    <a href="#" id="add-tray">Agregar</a>
-                    <a href="#" id="modify-tray">Modificar</a>
-                    <a href="#" id="consult-tray">Consultar</a>
-                </div>
-            </div>
-            <a href="#" onclick="openModal('report')">Reportes</a>
-            <a href="#" onclick="openModal('user')">Usuarios</a>
-            <a href="#" onclick="openModal('ayuda')">Ayuda</a>
-            
+    <header>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
-        <div class="nav-right">
-            <div class="user-info">
-                <img src="../assets/user.png" alt="User">
-                <span>Nombre del Usuario</span>
-            </div>
-            <a href="../login/login.html">Cerrar Sesión</a>
+
+        <div class="navbar">
+            <ul>
+                <li>
+                    <img src="../assets/logo.png" alt="Logo" class="logo">
+                </li>
+                <li>
+                    <a href="../home/home.html" class="active">Inicio</a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a href="#" onclick="toggleDropdown()">Charolas</button>
+                        <div class="dropdown-content">
+                            <a href="#" id="add-tray">Agregar</a>
+                            <a href="#" id="modify-tray">Modificar</a>
+                            <a href="#" id="consult-tray">Consultar</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" onclick="openModal('report')">Reportes</a>
+                </li>
+                <li>
+                    <a href="#" onclick="openModal('user')">Usuarios</a>
+                </li>
+                <li>
+                    <a href="#" onclick="openModal('ayuda')">Ayuda</a>
+                </li>
+                <li>
+                    <img src="../assets/user.png" alt="User" class="logo">
+                    <label font-size="20px">Nombre del Usuario</label>
+                </li>
+                <li>
+                    <a href="../login/login.html">Cerrar Sesión</a>
+                </li>
+            </ul>
         </div>
     </header>
 
-      <!-- Botones para filtro y cambiar la vista de las charolas -->
-    <div class="home-container">
-        <div class="nav-bar">
-            <div class="view-buttons">
-                <button id="filter-btn" onclick="openModal('filter')"><img src="../assets/filter.png" alt="Filtrar"><button>       
-                <button id="list-view-btn" onclick="changeClass('list-view')"><img src="../assets/list.png" alt="Lista"></button>
-                <button id="grid-view-btn" onclick="changeClass('grid-view')"><img src="../assets/grid.png" alt="Cuadrícula"></button>
-            </div>
+    <!-- <div class="home-container">
+        <div class="view-buttons">
+            <button id="filter-btn" onclick="openModal('filter')"><img src="../assets/filter.png" alt="Filtrar"><button>       
+            <button id="list-view-btn" onclick="changeClass('list-view')"><img src="../assets/list.png" alt="Lista"></button>
+            <button id="grid-view-btn" onclick="changeClass('grid-view')"><img src="../assets/grid.png" alt="Cuadrícula"></button>
         </div>
-
-        <!-- Contenedor de charolas -->
+        Contenedor de charolas
         <h2>Charolas de Herramientas Quirúrgicas</h2>
         <div class="tray-container list-view">
             <a href="../tray/tray.html?id=1" class="tray">
@@ -98,7 +113,7 @@
                 <p>Estado: <span class="status disponible">Disponible</span></p>
             </a>
 
-            <a href="../tray/tray.html?id=6" class="tray">
+             <a href="../tray/tray.html?id=6" class="tray">
                 <h3>Charola 6</h3>
                 <ul class="details">
                     <li>Tijeras</li>
@@ -107,9 +122,9 @@
                 </ul>
                 <p>Estado: <span class="status en-uso">En uso</span></p>
             </a>
-            <!-- Agrega más charolas según sea necesario -->
-        </div>
-    </div>
+            Agrega más charolas según sea necesario -->
+        <!--</div>
+     </div> --> 
 
     <!-- Pop-up Modals -->
     <div id="popup-form" class="modal">
@@ -151,6 +166,14 @@
                 }
             }
         });
+    </script>
+
+    <script>
+        hamburger = document.querySelector('.hamburger');
+        hamburger.onclick = function() {
+            navbar = document.querySelector('.navbar');
+            navbar.cklassList.toggle('active');
+        }
     </script>
 
     <script src="../home/modal.js"></script>

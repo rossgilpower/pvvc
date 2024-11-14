@@ -1,33 +1,28 @@
 /* navbar.css */
 
-.navbar {
-    display: flex;
-    overflow: visible;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 14px 16px;
-    margin-bottom: 20px;
-}
-
-
-.nav-left, .nav-right {
-    display: flex;
-    align-items: center;
-}
-
-.nav-left a, .nav-right a,.dropdown .dropbtn {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
+/* Estilos para la barra de navegación */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
     text-decoration: none;
+    box-sizing: border-box;
+}
+.navbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position:absolute;
+   top:10px;
+   left: 0;
+   right: 0;
+   background-color: #333;
+   transition: 0.2s;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
 }
 
 .navbar a:hover {
@@ -35,10 +30,56 @@
     color: #fff;
 }
 
-.navbar label, .navbar select {
-    color: #f2f2f2;
-    margin-left: 20px;
+.navbar ul {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: center;
+    text-align: center;
+    transition: 0.5s;
+    padding-left: 100px;
 }
+
+.navbar ul li a{
+    display: block;
+    font-size: 20px;
+    padding: 10px 25px;
+    transition: 0.2s;
+    margin: 0 5px;
+    flex-grow: 1;
+}
+
+.navbar ul li a:hover{
+    color: #333;
+    background-color: #f9f9f9;  
+}
+
+.navbar ul li a.active{
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hamburger .line{
+    width: 100%;
+    height: 2px;
+    background-color: #fefefe;
+    margin-top: 10px;
+}
+
 
 .navbar select {
     background-color: #333;
@@ -53,7 +94,15 @@
     color: black;
 }
 
-.nav-bar button {
+.navbar .user-info {
+    display: flex;
+    align-items: center;
+    color: #f2f2f2;
+    margin-right: 20px; /* Añade margen derecho para separar del logo */
+}
+
+
+.navbar button {
     padding: 5px;
     margin: 0 5px;
     border: none;
@@ -62,19 +111,29 @@
     background-color: transparent;
 }
 
-.nav-bar button img {
+.navbar button img {
     width: 34px;
     height: 34px;
 }
+
+.navbar .user-info img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/*------ Estilos para drowdown------*/
 
 .dropdown {
     position: relative;
     display: inline-block;
     overflow: visible;
+
 }
 
 .dropdown .dropbtn {
-    font-size: 16px;
+    font-size: 20px;
     border: none;
     outline: none;
     color: white;
@@ -117,63 +176,70 @@
     display: block; /* Asegura que se muestre el contenido al hacer hover */
 }
 
-.navbar .user-info {
-    display: flex;
-    align-items: center;
-    color: #f2f2f2;
-    margin-right: 20px; /* Añade margen derecho para separar del logo */
-}
-
-.navbar .user-info img {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.navbar .logo {
+.logo {
     height: 40px; /* Ajusta el tamaño del logo según sea necesario */
     margin-left: 20px; /* Añade margen izquierdo para separar del borde */
+    margin-right: 20px;
 }
 
 
-/*Media Queries para la responsividad*/
 
-@media (max-width: 768px){
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/*Media queries para la responsividad*/
 
-    .nav-left, .nav-right {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-left a, .dropdown .dropbtn {
-        padding: 5px;
-    }
-
-    .user-info {
-        margin-top: 10px;
-    }
-
-    .modal-content{
-        width: 90%;
-        padding: 15 px;
-        margin-top: 10px;
-    }
-    .close{
-        font-size: 24px;
+@media only screen and (max-width:1320px){
+    header{
+        padding: 0 50px;
     }
 }
 
-@media (max-width: 480px){
-    .modal-content{
-        width: 95%;
-        padding: 10 px;
-    }
-    .close{
-        font-size: 20px;
+@media only screen and (max-width:1100px){
+    header{
+        padding: 0 30px;
     }
 }
+
+@media only screen and (max-width:900px){
+    .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger .line{
+        width: 30px;
+        height: 3px;
+        background-color: #fefefe;
+        margin: 6px;
+    }
+
+    .navbar{
+        height: 0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background-color: #333;
+        transition: 0.2s;
+        overflow: hidden;
+    }
+
+    .navbar .active{
+        height: 450px;
+        
+    }
+
+    .navbar ul{
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0
+    }
+
+    .navbar ul li a{
+        margin-bottom: 12px;
+        color: #000000
+    }
+}
+
