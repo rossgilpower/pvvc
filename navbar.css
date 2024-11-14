@@ -225,7 +225,7 @@ header{
 
     .navbar .active{
         height: 450px;
-        
+        opacity: 1;
     }
 
     .navbar ul{
