@@ -1,182 +1,68 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Inicio</title>
-    <link rel="stylesheet" href="../home/home.css">
-    <link rel="stylesheet" href="../navbar.css">
-    <link rel="stylesheet" href="../home/tray_style.css">
-    <link rel="stylesheet" href="../home/modal.css">
-    <link rel="icon" href="../assets/icon.png" type="image/png">
-</head>
-
-<!-- Navbar -->
-<body>
-    <header>
-        <div class="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-
-        <div class="navbar">
-            <ul>
-                <li>
-                    <img src="../assets/logo.png" alt="Logo" class="logo">
-                </li>
-                <li>
-                    <a href="../home/home.html" class="active">Inicio</a>
-                </li>
-                <li>
-                    <div class="dropdown">
-                        <a href="#" onclick="toggleDropdown()">Charolas</button>
-                        <div class="dropdown-content">
-                            <a href="#" id="add-tray">Agregar</a>
-                            <a href="#" id="modify-tray">Modificar</a>
-                            <a href="#" id="consult-tray">Consultar</a>
-                        </div>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="../navbar.css">
+        <title>Inicio</title>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav container">
+                <div class="nav__data">
+                    <a href="home.html" class="nav__logo">
+                        <img class="nav__logo" src="../assets/logo_blanco.png" alt="Logo">
+                    </a>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__burger"></i>
+                        <i class="ri-close-line nav__close"></i>
                     </div>
-                </li>
-                <li>
-                    <a href="#" onclick="openModal('report')">Reportes</a>
-                </li>
-                <li>
-                    <a href="#" onclick="openModal('user')">Usuarios</a>
-                </li>
-                <li>
-                    <a href="#" onclick="openModal('ayuda')">Ayuda</a>
-                </li>
-                <li>
-                    <img src="../assets/user.png" alt="User" class="logo">
-                    <label font-size="20px">Nombre del Usuario</label>
-                </li>
-                <li>
-                    <a href="../login/login.html">Cerrar Sesión</a>
-                </li>
-            </ul>
-        </div>
-    </header>
+                </div>
 
-    <!-- <div class="home-container">
-        <div class="view-buttons">
-            <button id="filter-btn" onclick="openModal('filter')"><img src="../assets/filter.png" alt="Filtrar"><button>       
-            <button id="list-view-btn" onclick="changeClass('list-view')"><img src="../assets/list.png" alt="Lista"></button>
-            <button id="grid-view-btn" onclick="changeClass('grid-view')"><img src="../assets/grid.png" alt="Cuadrícula"></button>
-        </div>
-        Contenedor de charolas
-        <h2>Charolas de Herramientas Quirúrgicas</h2>
-        <div class="tray-container list-view">
-            <a href="../tray/tray.html?id=1" class="tray">
-                <h3>Charola 1</h3>
-                <ul class="details">
-                    <li>Bisturí</li>
-                    <li>Tijeras</li>
-                    <li>Pinzas</li>
-                </ul>
-                <p>Estado: <span class="status en-mantenimiento">En mantenimiento</span></p>
-            </a>
-            <a href="../tray/tray.html?id=2" class="tray">
-                <h3>Charola 2</h3>
-                <ul class="details">
-                    <li>Estetoscopio</li>
-                    <li>Termómetro</li>
-                    <li>Esfigmomanómetro</li>
-                </ul>
-                <p>Estado: <span class="status en-limpieza">En limpieza</span></p>
-            </a>
-            <a href="../tray/tray.html?id=3" class="tray">
-                <h3>Charola 3</h3>
-                <ul class="details">
-                    <li>Pinzas</li>
-                    <li>Gasas</li>
-                    <li>Jeringas</li>
-                </ul>
-                <p>Estado: <span class="status disponible">Disponible</span></p>
-            </a>
-            <a href="../tray/tray.html?id=4" class="tray">
-                <h3>Charola 4</h3>
-                <ul class="details">
-                    <li>Guantes</li>
-                    <li>Mascarillas</li>
-                    <li>Desinfectante</li>
-                </ul>
-                <p>Estado: <span class="status en-uso">En uso</span></p>
-            </a>
-            <a href="../tray/tray.html?id=5" class="tray">
-                <h3>Charola 5</h3>
-                <ul class="details">
-                    <li>Tijeras</li>
-                    <li>Mascarillas</li>
-                    <li>Desinfectante</li>
-                </ul>
-                <p>Estado: <span class="status disponible">Disponible</span></p>
-            </a>
+                <!-- Nav Menu -->
+                <div class="nav__menu" id="nav-menu">
+                   <ul class="nav__list">
+                    <li><a href="home.html" class="nav__link">Inicio</a></li>
 
-             <a href="../tray/tray.html?id=6" class="tray">
-                <h3>Charola 6</h3>
-                <ul class="details">
-                    <li>Tijeras</li>
-                    <li>Bisturí</li>
-                    <li>Lupa</li>
-                </ul>
-                <p>Estado: <span class="status en-uso">En uso</span></p>
-            </a>
-            Agrega más charolas según sea necesario -->
-        <!--</div>
-     </div> --> 
+                    <!-- Dropdown charola -->
+                    <li class="dropdown__item">
+                        <div class="nav__link">
+                           Charolas<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <i class="ri-add-line"></i> Crear charola
+                                </a>
+                                
+                            </li>
 
-    <!-- Pop-up Modals -->
-    <div id="popup-form" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="popup-form-content">
-                <!-- El contenido del formulario se llenará dinámicamente -->
-            </form>
-        </div>
-    </div>
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <i class="ri-pencil-line"></i> Editar charola
+                                </a>
+                            </li>
 
-   <script> //Script para el cambio de vista de charola
-    function changeClass(view) {
-        const trayContainer = document.querySelector('.tray-container');
-        if (view === 'list-view') {
-            trayContainer.className = 'tray-container list-view';
-        } else if (view === 'grid-view') {
-            trayContainer.className = 'tray-container grid-view';
-        }
-    }
-   </script>
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <i class="ri-delete-bin-line"></i> Eliminar charola
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
-    <script> //Script para el dropdown
-        function toggleDropdown() {
-            const dropdownContent = document.querySelector('.dropdown-content');
-            if (dropdownContent.style.display === 'block') {
-                dropdownContent.style.display = 'none';
-            } else {
-                dropdownContent.style.display = 'block';
-            }
-        }
+                    <li><a href="#" class="nav__link">Reportes</a></li>
+                    <li><a href="#" class="nav__link">Usuarios</a></li>
+                    <li><a href="#" class="nav__link">Ayuda</a></li>
+                    <li><a href="../login/login.html" class="nav__link">Cerrar sesión</a></li>
+                   </ul> 
+                </div>
+            </nav>
+        </header>
+        <script src="home.js"></script>
+        <script src="../navbar.js"></script>
+    </body>
 
-        // Cerrar el dropdown si el usuario hace clic fuera de él
-        window.addEventListener('click', function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                const dropdownContent = document.querySelector('.dropdown-content');
-                if (dropdownContent.style.display === 'block') {
-                    dropdownContent.style.display = 'none';
-                }
-            }
-        });
-    </script>
-
-    <script>
-        hamburger = document.querySelector('.hamburger');
-        hamburger.onclick = function() {
-            navbar = document.querySelector('.navbar');
-            navbar.classList.toggle('active');
-        }
-    </script>
-
-    <script src="../home/modal.js"></script>
-    <script src="../home/home.js"></script>
-</body>
-</html>
+    </html>

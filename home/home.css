@@ -1,17 +1,5 @@
 /* home.css */
 
-body {
-    font-family: Arial, sans-serif;
-    background: url('../assets/fondo.png') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    margin: 0;
-    overflow-y: auto;
-}
-
 .home-container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 30px;
