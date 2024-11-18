@@ -5,6 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
         <link rel="stylesheet" href="../navbar.css">
+        <link rel="stylesheet" href="../home/home.css">
+        <link rel="stylesheet" href="../home/modal.css">
+        <link rel="icon" href="../assets/icon.png" type="image/png">
+        <link rel="stylesheet" href="tray_style.css">
         <title>Inicio</title>
     </head>
     <body>
@@ -61,8 +65,124 @@
                 </div>
             </nav>
         </header>
-        <script src="home.js"></script>
-        <script src="../navbar.js"></script>
+
+        <!-- Botones para filtro y cambiar la vista de las charolas -->
+    <div class="home-container">
+        <!-- Contenedor de charolas -->
+        <h2>Charolas de Herramientas Quirúrgicas</h2>
+
+        <div class="view-buttons">
+            <img class="img-btn" id="filter-btn" src="../assets/filter.png" onclick="openModal('filter')" alt="Filtrar">       
+            <img class="img-btn" id="list-view-btn" src="../assets/list.png"onclick="changeClass('list-view')"alt="Lista">
+            <img class="img-btn" id="grid-view-btn" src="../assets/grid.png"onclick="changeClass('grid-view')" alt="Cuadrícula">
+        </div>
+
+        <div class="tray-container list-view">
+            <a href="../tray/tray.html?id=1" class="tray">
+                <h3>Charola 1</h3>
+                <ul class="details">
+                    <li>Bisturí</li>
+                    <li>Tijeras</li>
+                    <li>Pinzas</li>
+                </ul>
+                <p>Estado: <span class="status en-mantenimiento">En mantenimiento</span></p>
+            </a>
+            <a href="../tray/tray.html?id=2" class="tray">
+                <h3>Charola 2</h3>
+                <ul class="details">
+                    <li>Estetoscopio</li>
+                    <li>Termómetro</li>
+                    <li>Esfigmomanómetro</li>
+                </ul>
+                <p>Estado: <span class="status en-limpieza">En limpieza</span></p>
+            </a>
+            <a href="../tray/tray.html?id=3" class="tray">
+                <h3>Charola 3</h3>
+                <ul class="details">
+                    <li>Pinzas</li>
+                    <li>Gasas</li>
+                    <li>Jeringas</li>
+                </ul>
+                <p>Estado: <span class="status disponible">Disponible</span></p>
+            </a>
+            <a href="../tray/tray.html?id=4" class="tray">
+                <h3>Charola 4</h3>
+                <ul class="details">
+                    <li>Guantes</li>
+                    <li>Mascarillas</li>
+                    <li>Desinfectante</li>
+                </ul>
+                <p>Estado: <span class="status en-uso">En uso</span></p>
+            </a>
+            <a href="../tray/tray.html?id=5" class="tray">
+                <h3>Charola 5</h3>
+                <ul class="details">
+                    <li>Tijeras</li>
+                    <li>Mascarillas</li>
+                    <li>Desinfectante</li>
+                </ul>
+                <p>Estado: <span class="status disponible">Disponible</span></p>
+            </a>
+
+            <a href="../tray/tray.html?id=6" class="tray">
+                <h3>Charola 6</h3>
+                <ul class="details">
+                    <li>Tijeras</li>
+                    <li>Bisturí</li>
+                    <li>Lupa</li>
+                </ul>
+                <p>Estado: <span class="status en-uso">En uso</span></p>
+            </a>
+            <!-- Agrega más charolas según sea necesario -->
+        </div>
+    </div>
+
+    <!-- Pop-up Modals -->
+    <div id="popup-form" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="popup-form-content">
+                <!-- El contenido del formulario se llenará dinámicamente -->
+            </form>
+        </div>
+    </div>
+
+   <script> //Script para el cambio de vista de charola
+    function changeClass(view) {
+        const trayContainer = document.querySelector('.tray-container');
+        if (view === 'list-view') {
+            trayContainer.className = 'tray-container list-view';
+        } else if (view === 'grid-view') {
+            trayContainer.className = 'tray-container grid-view';
+        }
+    }
+   </script>
+
+    <script> //Script para el dropdown
+        function toggleDropdown() {
+            const dropdownContent = document.querySelector('.dropdown-content');
+            if (dropdownContent.style.display === 'block') {
+                dropdownContent.style.display = 'none';
+            } else {
+                dropdownContent.style.display = 'block';
+            }
+        }
+
+        // Cerrar el dropdown si el usuario hace clic fuera de él
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                const dropdownContent = document.querySelector('.dropdown-content');
+                if (dropdownContent.style.display === 'block') {
+                    dropdownContent.style.display = 'none';
+                }
+            }
+        });
+    </script>
+
+    <script src="../home/modal.js"></script>
+    <script src="home.js"></script>
+    <script src="../navbar.js"></script>
+
     </body>
 
     </html>
