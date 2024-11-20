@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles de la Charola</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="../tray/tray.css">
     <link rel="stylesheet" href="../navbar.css">
     <link rel="stylesheet" href="../home/modal.css">
@@ -11,21 +12,92 @@
     <link rel="icon" href="../assets/icon.png" type="image/png">
 </head>
 <body>
-    <div class="navbar">
-        <div class="nav-left">
-            <a href="../home/home.html">Inicio</a>
-        </div>
-    </div>
+     <!-- Header -->
+     <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="home.html" class="nav__logo">
+                    <img class="nav__logo" src="../assets/logo_blanco.png" alt="Logo">
+                </a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+
+            <!-- Nav Menu -->
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                <li><a href="../home/home.html" class="nav__link">Inicio</a></li>
+
+                <!-- Dropdown charola -->
+                <li class="dropdown__item">
+                    <div class="nav__link">
+                       Charolas<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+                    <ul class="dropdown__menu">
+                        <li>
+                            <a href="#" class="dropdown__link">
+                                <i class="ri-add-line"></i> Crear charola
+                            </a>
+                            
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown__link">
+                                <i class="ri-pencil-line"></i> Editar charola
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown__link">
+                                <i class="ri-delete-bin-line"></i> Eliminar charola
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="nav__link">Reportes</a></li>
+                <li><a href="#" class="nav__link">Usuarios</a></li>
+                <li><a href="../login/login.html" class="nav__link">Cerrar sesión</a></li>
+               </ul> 
+            </div>
+        </nav>
+    </header>
 
     <div class="tray-details-container">
         <h1>Detalles de la Charola</h1>
-        <p>ID: <span id="tray-id"></span></p>
-        <p>Nombre: <span id="tray-name"></span></p>
-        <p>Estado: <span id="tray-status" class="status"></span></p>
-        <p>Almacenista Responsable: <span id="tray-storekeeper"></span></p>
-        <p>Instrumentista Responsable: <span id="tray-instrumentalist"></span></p>
+        <p>[ID] <span id="tray-id"></span></p>
+        <p><span id="tray-date" style="float: right;">[Fecha de ult. modif.] </span></p>
+        <p>[Ubicacion] <span id="tray-location"></span></p>
+        <p><span id="tray-status" class="status" style="float: right;">Estatus</span></p>
+        <p><span id="tray-department" style="float: left;">[Departamento] </span></p>
+        <p><span id="tray-instrumentalist"> [Dr.] </span></p>
         <h2>Contenido</h2>
-        <ul id="tray-items"></ul>
+        <table id="tray-items">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+            </tr>
+            <tr>
+                <td>1235</td>
+                <td>Tijeras</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>1236</td>
+                <td>Bisturi</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1237</td>
+                <td>Gasas</td>
+                <td>10</td>
+            </tr>
+            <!-- El contenido de la tabla se llenará dinámicamente -->
+        </table>
+
         <button id="modify-tray-btn">Modificar</button>
         <button id="delete-tray-btn">Eliminar</button>
     </div>
@@ -41,6 +113,7 @@
     </div>
 
     <script src="../home/modal.js"></script>
-    <script src="../tray/tray.js"></script>
+    <script src="../home/home.js"></script>
+    <script src="../navbar.js"></script>
 </body>
 </html>
