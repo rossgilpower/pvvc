@@ -37,6 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
             storekeeper: 'Pedro Gómez',
             instrumentalist: 'Elena Rodríguez',
             items: ['Guantes', 'Mascarillas', 'Desinfectante']
+        },
+        5: {
+            id: 5,
+            name: 'Charola 5',
+            status: 'En uso',
+            storekeeper: 'Pedro Gómez',
+            instrumentalist: 'Elena Rodríguez',
+            items: ['Guantes', 'Mascarillas', 'Desinfectante']
         }
     };
 
