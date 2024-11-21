@@ -1,4 +1,25 @@
 /* tray.css */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+.root{
+    /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --black-color: hsl(220, 24%, 12%);
+  --black-color-light: hsl(220, 24%, 15%);
+  --black-color-lighten: hsl(220, 20%, 18%);
+  --white-color: #fff;
+  --body-color: hsl(220, 100%, 97%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: .938rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -81,6 +102,32 @@ th, td{
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
+
+.ri-check-line{
+    color: #45a049;
+    padding-right: 10px;
+}
+
+.ri-time-line{
+    color: #555;
+    padding-right: 10px;
+}
+
+.fase{
+    padding-top: 25px;
+    font-family: var(--body-font);
+    float: right;
+    font-style: var(--font-semi-bold);
+}
+
+.fase.pendiente{
+    color: #555;
+}
+
+.fase.listo{
+    color:#45a049;
+}
+
 .status {
     font-weight: bold;
 }
@@ -98,6 +145,10 @@ th, td{
 }
 
 .status.en-uso {
+    color: #555;
+}
+
+.status.apartado{
     color: blue;
 }
 
@@ -137,5 +188,6 @@ ul {
 }
 
 ul li {
+    font-family: var(--body-font);
     margin-bottom: 5px;
 }
